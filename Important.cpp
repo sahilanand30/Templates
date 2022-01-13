@@ -226,6 +226,21 @@ bool find_sol(ll a, ll b, ll c, ll x, ll y)
         y = -y;
     return true;
 }
+//Decimal to binary - Returns a vector of number's binary representation
+vector<ll> decToBinary(ll n)
+{
+    vector<ll> binaryNum(32, 0);
+    ll i = 0;
+    while (n > 0)
+    {
+        binaryNum[i] = n % 2;
+        n = n / 2;
+        i++;
+    }
+    reverse(binaryNum.begin(), binaryNum.end());
+    return binaryNum;
+}
+
 /*----------------------------------------POLICY BASED DATA STRUCTURES----------------------------------------*/
 /*Ordered Set*/
 #include <ext/pb_ds/assoc_container.hpp>
