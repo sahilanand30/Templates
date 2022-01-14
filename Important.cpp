@@ -241,6 +241,25 @@ vector<ll> decToBinary(ll n)
     return binaryNum;
 }
 
+//To convert string into integer
+int stringToInt(string s)
+{
+    int ans;
+    int len = s.length();
+    for (ll i = 0; i < n; i++)
+    {
+        if (i == 0)
+        {
+            ans = s[i] - '0';
+        }
+        else
+        {
+            ans = (ans * 10) + s[i] - '0';
+        }
+    }
+    return ans;
+}
+
 /*----------------------------------------POLICY BASED DATA STRUCTURES----------------------------------------*/
 /*Ordered Set*/
 #include <ext/pb_ds/assoc_container.hpp>
