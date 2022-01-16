@@ -260,6 +260,15 @@ int stringToInt(string s)
     return ans;
 }
 
+//XOR upto 'n'
+ll XorUptoN(ll n)
+{
+    int r = n%4;
+    if(r==3) return 0;
+    if(r==2) return n+1;
+    if(r==1) return 1;
+    return n;     
+}
 /*----------------------------------------POLICY BASED DATA STRUCTURES----------------------------------------*/
 /*Ordered Set*/
 #include <ext/pb_ds/assoc_container.hpp>
