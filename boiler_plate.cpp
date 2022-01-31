@@ -8,11 +8,12 @@ using namespace __gnu_pbds;
 #define all(x) x.begin(), x.end()
 #define ll long long int
 #define ull unsigned long long int
+#define countSetBits(z) __builtin_popcount(z);
 #define LL_MAX 9223372036854775807
 #define LL_MIN -9223372036854775808
 #define PI 3.1415926536
 #define mod 1000000007
-#define ln "\n"
+#define nl "\n"
 #define FASTIO                        \
     ios_base::sync_with_stdio(false); \
     cin.tie(0);
@@ -20,7 +21,7 @@ using namespace __gnu_pbds;
     freopen("input.txt", "r", stdin); \
     freopen("output.txt", "w", stdout);
 typedef tree<pair<ll, ll>, null_type, less<pair<ll, ll>>, rb_tree_tag, tree_order_statistics_node_update> pbds;
-/*-------------------------------------------MAIN CODE-------------------------------------------*/
+/*-------------------------------------------{MAIN CODE}-------------------------------------------*/
 
 int main()
 {
