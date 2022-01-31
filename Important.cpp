@@ -226,19 +226,23 @@ bool find_sol(ll a, ll b, ll c, ll x, ll y)
         y = -y;
     return true;
 }
-//Decimal to binary - Returns a vector of number's binary representation
-vector<ll> decToBinary(ll n)
+//Decimal to binary - Returns a string of number's binary representation
+string decToBinary(ll n)
 {
-    vector<ll> binaryNum(32, 0);
-    ll i = 0;
-    while (n > 0)
+    string tmp;
+    tmp.push_back('0');
+    for (ll i = 1 << 30; i > 0; i = i / 2)
     {
-        binaryNum[i] = n % 2;
-        n = n / 2;
-        i++;
+        if ((n & i) != 0)
+        {
+            tmp.push_back('1');
+        }
+        else
+        {
+            tmp.push_back('0');
+        }
     }
-    reverse(binaryNum.begin(), binaryNum.end());
-    return binaryNum;
+    return tmp;
 }
 
 //To convert string into integer
