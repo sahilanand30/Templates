@@ -1,5 +1,10 @@
 //JAY MAA CHAMUNDA
 //AUTHOR : Sahil Anand
+/************************************************************
+Important stuff to keep in mind:-
+(1)if n=0 , if n=1, if n=maximum, if n is even, if n is odd ?
+(2)Can negative values for 'n' is possible?
+************************************************************/
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
