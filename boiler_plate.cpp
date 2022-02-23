@@ -13,7 +13,7 @@ using namespace __gnu_pbds;
 #define all(x) x.begin(), x.end()
 #define ll long long int
 #define ull unsigned long long int
-#define countSetBits(z) __builtin_popcount(z);
+#define countSetBits(z) __builtin_popcountll(z);
 #define LL_MAX 9223372036854775807
 #define LL_MIN -9223372036854775808
 #define PI 3.1415926536
