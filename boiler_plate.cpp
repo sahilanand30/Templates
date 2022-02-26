@@ -1,9 +1,5 @@
 // JAY MAA CHAMUNDA
 // AUTHOR : Sahil Anand
-/*
-Company: AJ Technologies Pvt Ltd.
-Foundation : A.J Inititative
-*/
 /*-----------------------------------------------{HEADERS}-----------------------------------------------*/
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
