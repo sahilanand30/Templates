@@ -19,6 +19,8 @@ using namespace __gnu_pbds;
 #define mod 1000000007
 #define INF 1e18
 #define nl "\n"
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
 /*-----------------------------------------------{FAST I/O}-----------------------------------------------*/
 #define FASTIO                        \
     ios_base::sync_with_stdio(false); \
