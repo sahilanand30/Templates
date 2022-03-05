@@ -245,12 +245,12 @@ string decToBinary(ll n)
     return tmp;
 }
 
-//To convert string into integer
+// To convert string into integer
 int stringToInt(string s)
 {
     int ans;
     int len = s.length();
-    for (ll i = 0; i < n; i++)
+    for (int i = 0; i < len; i++)
     {
         if (i == 0)
         {
