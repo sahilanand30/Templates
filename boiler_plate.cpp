@@ -1,5 +1,5 @@
 //JAY MAA CHAMUNDA
-// AUTHOR : Sahil Anand
+//AUTHOR : Sahil Anand
 /*-----------------------------------------------{HEADERS}-----------------------------------------------*/
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
