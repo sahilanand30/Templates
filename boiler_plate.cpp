@@ -18,7 +18,7 @@ using namespace __gnu_pbds;
 #define PI 3.1415926536
 #define mod 1000000007
 #define INF 1e18
-#define nl "\n"
+#define nl endl
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
 /*-----------------------------------------------{FAST I/O}-----------------------------------------------*/
