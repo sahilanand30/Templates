@@ -1,5 +1,15 @@
-//JAY MAA CHAMUNDA
-//AUTHOR : Sahil Anand
+// JAY MAA CHAMUNDA
+// AUTHOR : Sahil Anand
+/*
+APPROACHES (ideas):-
+->Simulation / Brute Force ?? (check constraints)
+->Binary search the answer / Binary search on answer ??
+->Dp / Greedy ?? 
+->Bit Manipulation ??
+->Parity (odd/even) ??
+->Two pointers ??
+->Do answer follows some pattern ??
+*/
 /*-----------------------------------------------{HEADERS}-----------------------------------------------*/
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
@@ -61,6 +71,6 @@ ostream &operator<<(ostream &ostream, const vector<T> &c)
 int main()
 {
     FASTIO
-
+    
     return 0;
 }
