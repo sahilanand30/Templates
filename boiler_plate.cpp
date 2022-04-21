@@ -4,6 +4,7 @@
 APPROACHES (ideas):-
 ->Simulation / Brute Force ?? (check constraints)
 ->Binary search the answer / Binary search on answer ??
+->Prefix Sum / Suffix Sum ??
 ->Dp / Greedy ?? 
 ->Bit Manipulation ??
 ->Parity (odd/even) ??
