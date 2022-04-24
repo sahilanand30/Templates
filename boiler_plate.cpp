@@ -9,6 +9,7 @@ APPROACHES (ideas):-
 ->Bit Manipulation ??
 ->Parity (odd/even) ??
 ->Two pointers ??
+->stack, set, multiset, map, dequeue, priority_queue ??
 ->Do answer follows some pattern ??
 */
 /*-----------------------------------------------{HEADERS}-----------------------------------------------*/
