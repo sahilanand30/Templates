@@ -1,4 +1,3 @@
-// JAY MAA CHAMUNDA
 // AUTHOR : Sahil Anand
 /*
 APPROACHES (ideas):-
