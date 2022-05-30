@@ -4,11 +4,12 @@ APPROACHES (ideas):-
 ->Simulation / Brute Force ?? (check constraints)
 ->Binary search the answer / Binary search on answer ??
 ->Prefix Sum / Suffix Sum ??
-->Dp / Greedy ?? 
+->Dp / Greedy ??
 ->Bit Manipulation ??
 ->Parity (odd/even) ??
 ->Two pointers ??
 ->stack, set, multiset, map, dequeue, priority_queue ??
+->DFS / BFS / Any graph algorithm ??
 ->Do answer follows some pattern ??
 */
 /*-----------------------------------------------{HEADERS}-----------------------------------------------*/
