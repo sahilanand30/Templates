@@ -12,6 +12,7 @@ APPROACHES (ideas):-
 ->stack, set, multiset, map, dequeue, priority_queue ??
 ->DFS / BFS / Any graph algorithm ??
 ->Do answer follows some pattern ??
+->GOLDEN RULE: READ PROBLEM STATEMENT TWICE ATLEAST !!!!!!!!!!!!!!!!
 */
 /*-----------------------------------------------{HEADERS}-----------------------------------------------*/
 #include <bits/stdc++.h>
