@@ -36,6 +36,7 @@ using namespace __gnu_pbds;
 #define nl endl
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
+#define printWithPrecision(i,x) cout<<fixed<<setprecision(i)<<x<<nl
 /*-----------------------------------------------{FAST I/O}-----------------------------------------------*/
 #define FASTIO                        \
     ios_base::sync_with_stdio(false); \
