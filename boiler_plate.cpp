@@ -2,7 +2,7 @@
 /*
 APPROACHES (ideas):-
 ->Simulation / Brute Force ?? (check constraints)
-->Binary search the answer / Binary search on answer ??
+->Binary search ?? (Max/Min) ([NNNN|YYYYYYYYYYYYYYY]) ??
 ->Prefix Sum / Suffix Sum ??
 ->Sliding Window ??
 ->Dp / Greedy ??
