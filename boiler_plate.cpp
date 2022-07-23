@@ -1,25 +1,27 @@
-//જય મા ચામુંડા
+// જય મા ચામુંડા
 // AUTHOR : Sahil Anand
-/*
-APPROACHES (ideas):-
-->Simulation / Brute Force ?? (check constraints)
-->Binary search ?? (Max/Min) ([NNNN|YYYYYYYYYYYYYYY]) ??
-->Prefix Sum / Suffix Sum ??
-->Sliding Window ??
-->Dp / Greedy ??
-->Bit Manipulation ??
-->Parity (odd/even) ??
-->Two pointers ??
-->stack, set, multiset, map, dequeue, priority_queue ??
-->DFS / BFS / Any graph algorithm ??
-->Do answer follows some pattern ??
-->GOLDEN RULE: READ PROBLEM STATEMENT TWICE ATLEAST !!!!!!!!!!!!!!!!
-*/
-/*-----------------------------------------------{HEADERS}-----------------------------------------------*/
+/*----------------------------{APPROACHES}----------------------------*/
+// ->Simulation / Brute Force ?? (check constraints)
+// ->Binary search ?? (Max/Min) ([NNNN|YYYYYYYYYYYYYYY]) ??
+// ->Prefix Sum / Suffix Sum ??
+// ->Sliding Window ??
+// ->Dp / Greedy ??
+// ->Bit Manipulation ??
+// ->Parity (odd/even) ??
+// ->Two pointers ??
+// ->stack, set, multiset, map, dequeue, priority_queue ??
+// ->DFS / BFS / Any graph algorithm ??
+// ->Do answer follows some pattern ??
+// ->GOLDEN RULE: READ PROBLEM STATEMENT TWICE ATLEAST !!!!!!!!!!!!!!!!
+/*-----------------------------{HEADERS}-----------------------------*/
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
-/*------------------------------------------------{MACROS}------------------------------------------------*/
+/*--------------------------{Optimizations}--------------------------*/
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx,avx2,fma")
+#pragma GCC optimization("unroll-loops")
+/*------------------------------{MACROS}------------------------------*/
 using namespace std;
 using namespace __gnu_pbds;
 #define rep(i, n) for (ll i = 0; i < n; i++)
@@ -36,18 +38,18 @@ using namespace __gnu_pbds;
 #define nl endl
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
-#define printWithPrecision(i,x) cout<<fixed<<setprecision(i)<<x<<nl
-/*-----------------------------------------------{FAST I/O}-----------------------------------------------*/
+#define printWithPrecision(i, x) cout << fixed << setprecision(i) << x << nl
+/*-------------------------------{FAST I/O}-------------------------------*/
 #define FASTIO                        \
     ios_base::sync_with_stdio(false); \
     cin.tie(0);
-/*-------------------------------------------{NON-STANDARD I/O}-------------------------------------------*/
+/*----------------------------{NON-STANDARD I/O}----------------------------*/
 #define not_standard                  \
     freopen("input.txt", "r", stdin); \
     freopen("output.txt", "w", stdout);
-/*-------------------------------------------{PBDS/ORDERED_SET}-------------------------------------------*/
+/*----------------------------{PBDS/ORDERED_SET}----------------------------*/
 typedef tree<pair<ll, ll>, null_type, less<pair<ll, ll>>, rb_tree_tag, tree_order_statistics_node_update> pbds;
-/*------------------------------------------{OPERATOR_OVERLOADS}------------------------------------------*/
+/*---------------------------{OPERATOR_OVERLOADS}---------------------------*/
 template <typename T1, typename T2> // cin >> pair<T1, T2>
 istream &operator>>(istream &istream, pair<T1, T2> &p)
 {
@@ -72,7 +74,7 @@ ostream &operator<<(ostream &ostream, const vector<T> &c)
         cout << it << " ";
     return ostream;
 }
-/*-----------------------------------------------{MAIN CODE}-----------------------------------------------*/
+/*--------------------------------{MAIN CODE}--------------------------------*/
 
 int main()
 {
