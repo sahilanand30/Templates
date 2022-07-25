@@ -4,11 +4,10 @@
 // ->Simulation / Brute Force ?? (check constraints)
 // ->Binary search ?? (Max/Min) ([NNNN|YYYYYYYYYYYYYYY]) ??
 // ->Prefix Sum / Suffix Sum ??
-// ->Sliding Window ??
+// ->Sliding Window / Two pointers ?? 
 // ->Dp / Greedy ??
 // ->Bit Manipulation ??
 // ->Parity (odd/even) ??
-// ->Two pointers ??
 // ->stack, set, multiset, map, dequeue, priority_queue ??
 // ->DFS / BFS / Any graph algorithm ??
 // ->Do answer follows some pattern ??
