@@ -1,10 +1,10 @@
-// જય મા ચામુંડા
+// JAY MAA CHAMUNDA
 // AUTHOR : Sahil Anand
 /*----------------------------{APPROACHES}----------------------------*/
 // ->Simulation / Brute Force ?? (check constraints)
 // ->Binary search ?? (Max/Min) ([NNNN|YYYYYYYYYYYYYYY]) ??
 // ->Prefix Sum / Suffix Sum ??
-// ->Sliding Window / Two pointers ?? 
+// ->Sliding Window / Two pointers ??
 // ->Dp / Greedy ??
 // ->Bit Manipulation ??
 // ->Parity (odd/even) ??
@@ -16,6 +16,10 @@
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
+/*--------------------------{Optimizations}--------------------------*/
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx,avx2,fma")
+#pragma GCC optimization("unroll-loops")
 /*------------------------------{MACROS}------------------------------*/
 using namespace std;
 using namespace __gnu_pbds;
