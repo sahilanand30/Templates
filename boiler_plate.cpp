@@ -37,6 +37,8 @@ using namespace __gnu_pbds;
 #define nl endl
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
+#define maxHeap priority_queue<ll> //maxElement at the top
+#define minHeap priority_queue<ll,vll,greater<ll>> //minElement at the top
 #define printWithPrecision(i, x) cout << fixed << setprecision(i) << x << nl
 /*-------------------------------{FAST I/O}-------------------------------*/
 #define FASTIO                        \
