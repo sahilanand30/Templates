@@ -6,7 +6,7 @@
 // ->Prefix Sum / Suffix Sum ??
 // ->Sliding Window / Two pointers ??
 // ->Dp / Greedy ??
-// ->Bit Manipulation ??
+// ->Bit Manipulation (not only binary) ??
 // ->Parity (odd/even) ??
 // ->stack, set, multiset, map, dequeue, priority_queue ??
 // ->DFS / BFS / Any graph algorithm ??
