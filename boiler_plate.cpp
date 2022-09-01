@@ -3,7 +3,7 @@
 /*----------------------------{APPROACHES}----------------------------*/
 // ->Simulation / Brute Force ?? (check constraints)
 // ->Binary search ?? (Max/Min) ([NNNN|YYYYYYYYYYYYYYY]) ??
-// ->Prefix Sum / Suffix Sum ??
+// ->Prefix Sum / Suffix Sum / (1d 2d) ??
 // ->Sliding Window / Two pointers ??
 // ->Dp / Greedy ??
 // ->Bit Manipulation (not only binary) ??
