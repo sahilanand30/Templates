@@ -28,49 +28,24 @@ using namespace __gnu_pbds;
 #define nl endl
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
-#define maxHeap priority_queue<ll> //maxElement at the top
-#define minHeap priority_queue<ll,vll,greater<ll>> //minElement at the top
+#define maxHeap priority_queue<ll>                   // maxElement at the top
+#define minHeap priority_queue<ll, vll, greater<ll>> // minElement at the top
 #define printWithPrecision(i, x) cout << fixed << setprecision(i) << x << nl
-/*-------------------------------{FAST I/O}-------------------------------*/
-#define FASTIO                        \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(0);
+/*----------------------------{PBDS/ORDERED_SET}----------------------------*/
+typedef tree<pair<ll, ll>, null_type, less<pair<ll, ll>>, rb_tree_tag, tree_order_statistics_node_update> pbds;
 /*----------------------------{NON-STANDARD I/O}----------------------------*/
 #define not_standard                  \
     freopen("input.txt", "r", stdin); \
     freopen("output.txt", "w", stdout);
-/*----------------------------{PBDS/ORDERED_SET}----------------------------*/
-typedef tree<pair<ll, ll>, null_type, less<pair<ll, ll>>, rb_tree_tag, tree_order_statistics_node_update> pbds;
-/*---------------------------{OPERATOR_OVERLOADS}---------------------------*/
-template <typename T1, typename T2> // cin >> pair<T1, T2>
-istream &operator>>(istream &istream, pair<T1, T2> &p)
-{
-    return (istream >> p.first >> p.second);
-}
-template <typename T> // cin >> vector<T>
-istream &operator>>(istream &istream, vector<T> &v)
-{
-    for (auto &it : v)
-        cin >> it;
-    return istream;
-}
-template <typename T1, typename T2> // cout << pair<T1, T2>
-ostream &operator<<(ostream &ostream, const pair<T1, T2> &p)
-{
-    return (ostream << p.first << " " << p.second);
-}
-template <typename T> // cout << vector<T>
-ostream &operator<<(ostream &ostream, const vector<T> &c)
-{
-    for (auto &it : c)
-        cout << it << " ";
-    return ostream;
-}
+/*-------------------------------{FAST I/O}-------------------------------*/
+#define FASTIO                        \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(0);
 /*--------------------------------{MAIN CODE}--------------------------------*/
 
 int main()
 {
     FASTIO
-    
+
     return 0;
 }
