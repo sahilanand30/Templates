@@ -1,5 +1,8 @@
-// JAY MAA CHAMUNDA
-// AUTHOR : Sahil Anand
+// Jay Maa Chamunda
+/*
+Author: Sahil Anand
+Find Me on: https://linktr.ee/sahilanand30
+*/
 /*----------------------------{APPROACHES}----------------------------*/
 // ->Simulation / Brute Force ?? (check constraints)
 // ->Binary search ?? (Max/Min) ([NNNN|YYYYYYYYYYYYYYY]) ??
