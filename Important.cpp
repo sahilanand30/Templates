@@ -1,3 +1,15 @@
+/*----------------------------{APPROACHES}----------------------------*/
+// ->Simulation / Brute Force ?? (check constraints)
+// ->Binary search ?? (Max/Min) ([NNNN|YYYYYYYYYYYYYYY]) ??
+// ->Prefix Sum / Suffix Sum / (1d 2d) ??
+// ->Sliding Window / Two pointers ??
+// ->Dp / Greedy ??
+// ->Bit Manipulation (not only binary) ??
+// ->Parity (odd/even) ??
+// ->stack, set, multiset, map, dequeue, priority_queue ??
+// ->DFS / BFS / Any graph algorithm ??
+// ->Do answer follows some pattern ??
+// ->GOLDEN RULE: READ PROBLEM STATEMENT TWICE ATLEAST !!!!!!!!!!!!!!!!
 /*--------------------Use this functions directly in your code--------------------*/
 //prime check
 bool isprime(ll n)
