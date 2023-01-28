@@ -7,13 +7,13 @@ Find Me on: https://linktr.ee/sahilanand30
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
+using namespace std;
+using namespace __gnu_pbds;
 /*--------------------------{Optimizations}--------------------------*/
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization("unroll-loops")
 /*------------------------------{MACROS}------------------------------*/
-using namespace std;
-using namespace __gnu_pbds;
 #define rep(i, n) for (ll i = 0; i < n; i++)
 #define all(x) x.begin(), x.end()
 #define ll long long int
