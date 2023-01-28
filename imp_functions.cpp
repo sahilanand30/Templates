@@ -1,15 +1,19 @@
 /*----------------------------{APPROACHES}----------------------------*/
-// ->Check and analyse constraints
+// ->Check and analyse constraints carefully
 // ->Simulation / Brute Force ??
 // ->Binary search ?? (Max/Min) ([NNNN|YYYYYYYYYYYYYYY]) ??
 // ->Prefix Sum / Suffix Sum / (1d 2d) ??
-// ->Sliding Window / Two pointers ??
+// ->Sliding Window / Two pointers (in sorted only) ??
 // ->Dp / Greedy ??
 // ->Bit Manipulation (not only binary) ??
 // ->Parity (odd/even) ??
-// ->stack, set, multiset, map, dequeue, priority_queue ??
+// ->stack, set, multiset, map, dequeue, priority_queue(k-min/k-max) ??
 // ->DFS / BFS(shortest path/minimun operations) / Any graph algorithm ??
+// ->In case of circular array, append the duplicate array to original array
+// ->Always try to observe patterns/observation in Game Theory specially
 // ->Do answer follows some pattern ??
+// ->Always refer bitwise formulas in bitwise equation problems
+// ->Never submit blindly, have a look once before submiting
 // ->GOLDEN RULE: READ PROBLEM STATEMENT TWICE CAREFULLY !!!!!!!!!!!!!!!!
 
 /*--------------------{Use this functions directly in your code}--------------------*/
