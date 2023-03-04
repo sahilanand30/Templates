@@ -11,6 +11,8 @@
 // ->DFS / BFS(shortest path/minimun operations) / Any graph algorithm ??
 // ->In case of circular array, append the duplicate array to original array
 // ->Always try to observe patterns/observation in Game Theory specially
+// ->Stack and string very common combination
+// ->Binary search on window size very common combination
 // ->Do answer follows some pattern ??
 // ->Always refer bitwise formulas in bitwise equation problems
 // ->Never submit blindly, have a look once before submiting
