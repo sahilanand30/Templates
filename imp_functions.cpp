@@ -13,6 +13,8 @@
 // ->Always try to observe patterns/observation in Game Theory specially
 // ->Stack and string very common combination
 // ->Binary search on window size very common combination
+// ->Combination: binary search on window size
+// ->Combination: stack and string
 // ->Do answer follows some pattern ??
 // ->Always refer bitwise formulas in bitwise equation problems
 // ->Never submit blindly, have a look once before submiting
@@ -52,7 +54,7 @@ void primeSeive()
 {
     ll maxN = 1000000;
     isPrime[0] = isPrime[1] = false;
-    for (ll i = 2; i * i <= maxN; i++)
+    for (ll i = 2; i <= maxN; i++)
     {
         if (isPrime[i])
         {
@@ -64,7 +66,34 @@ void primeSeive()
     }
 }
 
-// Prime Factorization: O(logN)
+// Prime Factorization: O(nloglogn)
+#define MAXN 1000001
+int spf[MAXN];
+void sieve()
+{
+    spf[1] = 1;
+    for (int i = 2; i < MAXN; i++)
+        spf[i] = i;
+    for (int i = 4; i < MAXN; i += 2)
+        spf[i] = 2;
+    for (int i = 3; i * i < MAXN; i++)
+        if (spf[i] == i)
+            for (int j = i * i; j < MAXN; j += i)
+                if (spf[j] == j)
+                    spf[j] = i;
+}
+vector<int> getFactorization(int x)
+{
+    vector<int> ret;
+    while (x != 1)
+    {
+        ret.push_back(spf[x]);
+        x = x / spf[x];
+    }
+    return ret;
+}
+
+// prime factorization in O(sqrtN)
 void primeFact(ll n)
 {
     for (ll i = 2; i * i <= n; i++)
@@ -83,6 +112,7 @@ void primeFact(ll n)
     if (n > 1)
         cout << n << " ^ " << 1 << endl;
 }
+
 
 // factorial: O(n)
 ll fact[1000001];
@@ -110,7 +140,6 @@ ll ncr(ll n, ll r)
             ll m = __gcd(p, k);
             p /= m;
             k /= m;
-
             n--;
             r--;
         }
