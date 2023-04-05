@@ -14,9 +14,9 @@ using namespace __gnu_pbds;
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization("unroll-loops")
 /*------------------------------{MACROS}------------------------------*/
+#define ll long long int
 #define rep(i, n) for (ll i = 0; i < n; i++)
 #define all(x) x.begin(), x.end()
-#define ll long long int
 #define ull unsigned long long int
 #define countSetBits(z) __builtin_popcountll(z);
 #define vll vector<long long int>
@@ -42,10 +42,17 @@ typedef tree<pair<ll, ll>, null_type, less<pair<ll, ll>>, rb_tree_tag, tree_orde
     ios_base::sync_with_stdio(false); \
     cin.tie(0);
 /*--------------------------------{MAIN CODE}--------------------------------*/
-
+void solve()
+{
+}
 int main()
 {
     FASTIO
-
+    ll t = 1;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
     return 0;
 }
