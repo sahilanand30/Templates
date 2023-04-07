@@ -42,9 +42,7 @@ typedef tree<pair<ll, ll>, null_type, less<pair<ll, ll>>, rb_tree_tag, tree_orde
     ios_base::sync_with_stdio(false); \
     cin.tie(0);
 /*--------------------------------{MAIN CODE}--------------------------------*/
-void solve()
-{
-}
+
 int main()
 {
     FASTIO
@@ -52,7 +50,7 @@ int main()
     cin >> t;
     while (t--)
     {
-        solve();
+        
     }
     return 0;
 }
