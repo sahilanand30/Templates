@@ -51,7 +51,6 @@ public:
     }
 };
 
-
 /*--------------------------{POLICY BASED DATA STRUCTURES}-----------------------------*/
 /*Ordered Set*/
 #include <ext/pb_ds/assoc_container.hpp>
@@ -121,144 +120,93 @@ int main()
     cout << endl;
 }
 
-
-/*----------------------------------{SEGMENT TREES}-------------------------------------*/
-//Do minor updates according to the given problem
-//Note: Use below template only when there's only "POINT" update is involved
-class SGTree {
-	vector<int> seg;
-public:
-	SGTree(int n) {
-		seg.resize(4 * n + 1);
-	}
-	void build(int ind, int low, int high, int arr[]) {
-		if (low == high) {
-			seg[ind] = arr[low];
-			return;
-		}
-		int mid = (low + high) / 2;
-		build(2 * ind + 1, low, mid, arr);
-		build(2 * ind + 2, mid + 1, high, arr);
-		seg[ind] = min(seg[2 * ind + 1], seg[2 * ind + 2]);
-	}
-	int query(int ind, int low, int high, int l, int r) {
-		// no overlap
-		// l r low high or low high l r
-		if (r < low || high < l) return INT_MAX;
-
-		// complete overlap
-		// [l low high r]
-		if (low >= l && high <= r) return seg[ind];
-
-        //partial overlap
-		int mid = (low + high) >> 1;
-		int left = query(2 * ind + 1, low, mid, l, r);
-		int right = query(2 * ind + 2, mid + 1, high, l, r);
-		return min(left, right);
-	}
-	void update(int ind, int low, int high, int i, int val) {
-		if (low == high) {
-			seg[ind] = val;
-			return;
-		}
-		int mid = (low + high) >> 1;
-		if (i <= mid) update(2 * ind + 1, low, mid, i, val);
-		else update(2 * ind + 2, mid + 1, high, i, val);
-		seg[ind] = min(seg[2 * ind + 1], seg[2 * ind + 2]);
-	}
-};
-
-//LAZY PROPOGATION:-
-//Note: Use below template only when there's only "RANGE" update is involved
-class ST {
-	vector<int> seg, lazy; 
-public: 
-	ST(int n) {
-		seg.resize(4 * n); 
-		lazy.resize(4 * n); 
-	}
-public: 
-	void build(int ind, int low, int high, int arr[]) {
-		if(low == high) {
-			seg[ind] = arr[low];
-			return; 
-		}
-		int mid = (low + high) >> 1; 
-		build(2*ind+1, low, mid, arr); 
-		build(2*ind+2, mid+1, high, arr); 
-		seg[ind] = seg[2*ind+1] + seg[2*ind+2];
-	}
-public:
-	void update(int ind, int low, int high, int l, int r, 
-		int val) {
-		// update the previous remaining updates 
-		// and propogate downwards 
-		if(lazy[ind] != 0) {
-			seg[ind] += (high - low + 1) * lazy[ind]; 
-			// propogate the lazy update downwards
-			// for the remaining nodes to get updated 
-			if(low != high) {
-				lazy[2*ind+1] += lazy[ind]; 
-				lazy[2*ind+2] += lazy[ind]; 
-			}
- 
-			lazy[ind] = 0; 
-		}
- 
-		// no overlap 
-		// we don't do anything and return 
-		// low high l r or l r low high 
-		if(high < l or r < low) {
-			return; 
-		}
- 
-		// complete overlap 
-		// l low high r 
-		if(low>=l && high <= r) {
-			seg[ind] += (high - low + 1) * val; 
-			// if a leaf node, it will have childrens
-			if(low != high) {
-				lazy[2*ind+1] += val; 
-				lazy[2*ind+2] += val; 
-			}
-			return; 
-		}
-		// last case has to be no overlap case
-		int mid = (low + high) >> 1; 
-		update(2*ind+1, low, mid, l, r, val);
-		update(2*ind+2, mid+1, high, l, r, val); 
-		seg[ind] = seg[2*ind+1] + seg[2*ind+2]; 
-	}
-public: 
-	int query(int ind, int low, int high, int l, int r) {
- 
-		// update if any updates are remaining 
-		// as the node will stay fresh and updated 
-		if(lazy[ind] != 0) {
-			seg[ind] += (high - low + 1) * lazy[ind]; 
-			// propogate the lazy update downwards
-			// for the remaining nodes to get updated 
-			if(low != high) {
-				lazy[2*ind+1] += lazy[ind]; 
-				lazy[2*ind+2] += lazy[ind]; 
-			}
- 
-			lazy[ind] = 0; 
-		}
- 
-		// no overlap return 0; 
-		if(high < l or r < low) {
-			return 0; 
-		}
- 
-		// complete overlap 
-		if(low>=l && high <= r) return seg[ind]; 
-
-        //partial overlap
-		int mid = (low + high) >> 1; 
-		int left = query(2*ind+1, low, mid, l, r);
-		int right = query(2*ind+2, mid+1, high, l, r);
-		return left + right; 
-	}
-};
- 
+/*----------------------------------{SEGMENT TREES (TUF)}-------------------------------------*/
+// this entire code is for summation
+int a[100005], seg[4 * 100005];
+void build(int ind, int lo, int hi)
+{
+    if (hi == lo)
+    {
+        seg[ind] = a[lo];
+        return;
+    }
+    int mid = (lo + hi) / 2;
+    build(2 * ind + 1, lo, mid);
+    build(2 * ind + 2, mid + 1, hi);
+    seg[ind] = seg[2 * ind + 1] + seg[2 * ind + 2]; // update accordingly
+}
+int query(int ind, int lo, int hi, int l, int r)
+{
+    if (lo >= l && hi <= r)
+        return seg[ind];
+    if (hi < l || lo > r)
+        return 0; // update accordingly
+    int mid = (lo + hi) / 2;
+    int left = query(2 * ind + 1, lo, mid, l, r);
+    int right = query(2 * ind + 2, mid + 1, hi, l, r);
+    return left + right; // update accordingly
+}
+// Below is the code for Lazy Propogation
+int lazy[4 * 100005];
+void pointUpdate(int ind, int lo, int hi, int node, int val)
+{
+    if (lo == hi)
+        seg[low] += val;
+    else
+    {
+        int mid = (lo + hi) / 2;
+        if (node <= mid && mid >= lo)
+            pointUpdate(2 * ind + 1, lo, mid, node, val);
+        else
+            pointUpdate(2 * ind + 2, mid + 1, hi, node, val);
+        seg[ind] = seg[2 * ind + 1] + seg[2 * ind + 2]; // update accordingly
+    }
+}
+void rangeUpdate(int ind, int lo, int hi, int l, int r, int val)
+{
+    if (lazy[ind] != 0)
+    {
+        seg[ind] += (hi - lo + 1) * lazy[ind]; // update accordingly
+        if (lo != hi)
+        {
+            lazy[2 * ind + 1] += lazy[ind]; // update accordingly
+            lazy[2 * ind + 2] += lazy[ind]; // update accordingly
+        }
+        lazy[ind] = 0;
+    }
+    if (r < lo || l > hi || lo > hi)
+        return;
+    if (lo >= l && hi <= r)
+    {
+        seg[ind] += (hi - lo + 1) * val; // update accordingly
+        if (lo != hi)
+        {
+            lazy[2 * ind + 1] += lazy[ind]; // update accordingly
+            lazy[2 * ind + 2] += lazy[ind]; // update accordingly
+        }
+        return;
+    }
+    int mid = (lo + hi) / 2;
+    rangeUpdate(2 * ind + 1, lo, mid, l, r, val);
+    rangeUpdate(2 * ind + 2, mid + 1, hi, l, r, val);
+    seg[ind] = seg[2 * ind + 1] + seg[2 * ind + 2]; // update accordingly
+}
+int lazyQuery(int ind, int lo, int hi, int l, int r, int val)
+{
+    if (lazy[ind] != 0)
+    {
+        seg[ind] += (hi - lo + 1) * lazy[ind]; // update accordingly
+        if (lo != hi)
+        {
+            lazy[2 * ind + 1] += lazy[ind]; // update accordingly
+            lazy[2 * ind + 2] += lazy[ind]; // update accordingly
+        }
+        lazy[ind] = 0;
+    }
+    if (r < lo || l > hi || lo > hi)
+        return 0;
+    if (lo >= l && hi <= r)
+        return seg[ind];
+    int mid = (lo + hi) / 2;
+    return (lazyQuery(2 * ind + 1, lo, mid, l, r, val) + lazyQuery(2 * ind + 2, mid + 1, hi, l, r, val)); // update accordingly
+}
