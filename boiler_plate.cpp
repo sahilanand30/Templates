@@ -1,4 +1,3 @@
-// Jay Maa Chamunda
 /*
 Author: Sahil Anand
 Portfolio: https://sahilanand.netlify.app/
