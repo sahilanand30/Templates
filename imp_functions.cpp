@@ -1,5 +1,6 @@
 /*----------------------------{APPROACHES}----------------------------*/
 // ->Check and analyse constraints carefully
+// ->take care of long long and int
 // ->Simulation / Brute Force ??
 // ->Binary search ?? (Max/Min) ([NNNN|YYYYYYYYYYYYYYY]) ??
 // ->Prefix Sum / Suffix Sum / (1d 2d) ??
@@ -8,15 +9,17 @@
 // ->Bit Manipulation (not only binary) ??
 // ->Parity (odd/even) ??
 // ->stack, set, multiset, map, dequeue, priority_queue(k-min/k-max) ??
+// ->next greater element
 // ->DFS / BFS(shortest path/minimun operations) / Any graph algorithm ??
-// ->In case of circular array, append the duplicate array to original array
+// ->In case of circular array, use visited array to stop revisiting same index
+// ->In case of circular array, append itself so that calculation can be easy
 // ->Always try to observe patterns/observation in Game Theory specially
-// ->Stack and string very common combination
-// ->Binary search on window size very common combination
 // ->Combination: binary search on window size
 // ->Combination: stack and string
-// ->Do answer follows some pattern ??
+// ->Clusters / Grouping ??
 // ->Always refer bitwise formulas in bitwise equation problems
+// ->Always try to find "-(-x)" if its asks to find 'x'
+// ->Always try to generate all answers for smaller testcases and find pattern!
 // ->Never submit blindly, have a look once before submiting
 // ->GOLDEN RULE: READ PROBLEM STATEMENT TWICE CAREFULLY !!!!!!!!!!!!!!!!
 
