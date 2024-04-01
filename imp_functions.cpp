@@ -8,7 +8,7 @@
 // ->Dp / Greedy ??
 // ->Bit Manipulation (not only binary) ??
 // ->Parity (odd/even) ??
-// ->stack, set, multiset, map, dequeue, priority_queue(k-min/k-max) ??
+// ->stack, set, multiset, map, deque, priority_queue(k-min/k-max) ??
 // ->next greater element
 // ->DFS / BFS(shortest path/minimun operations) / Any graph algorithm ??
 // ->In case of circular array, use visited array to stop revisiting same index
@@ -17,8 +17,9 @@
 // ->Combination: binary search on window size
 // ->Combination: stack and string
 // ->Clusters / Grouping ??
+// ->Subarray? Counting? Try for Leetcode's Two Sum technique!
 // ->Always refer bitwise formulas in bitwise equation problems
-// ->Always try to find "-(-x)" if its asks to find 'x'
+// ->Reverse Engineering -> Construct answer from end to start
 // ->Always try to generate all answers for smaller testcases and find pattern!
 // ->Never submit blindly, have a look once before submiting
 // ->GOLDEN RULE: READ PROBLEM STATEMENT TWICE CAREFULLY !!!!!!!!!!!!!!!!
@@ -28,23 +29,19 @@
 bool isprime(ll n)
 {
     for (ll i = 2; i * i <= n; i++)
-    {
         if (n % i == 0)
             return false;
-    }
     return true;
 }
 
 // Binary Exponentiation: O(logN)
-ll binpow(ll a, ll b, ll M)
+ll binpow(ll a, ll b, ll M) // res = (a^b)%M
 {
     ll res = 1;
     while (b > 0)
     {
         if (b & 1)
-        {
             res = (res * a) % M;
-        }
         a = (a * a) % M;
         b >>= 1;
     }
@@ -52,24 +49,24 @@ ll binpow(ll a, ll b, ll M)
 }
 
 // Sieve of Eratosthenes
-vector<bool> isPrime(1000001, true);
+int maxN = 1000000; // need prime less or equal to 'maxN'
+int isPrime[maxN + 1];
 void primeSeive()
 {
-    ll maxN = 1000000;
+    for (int i = 2; i <= maxN; i++)
+        isPrime[i] = true;
     isPrime[0] = isPrime[1] = false;
-    for (ll i = 2; i <= maxN; i++)
+    for (long long p = 2; p * p <= maxN; p++)
     {
-        if (isPrime[i])
+        if (isPrime[p])
         {
-            for (ll j = 2 * i; j <= n; j += i)
-            {
-                isPrime[j] = false;
-            }
+            for (long long i = p * p; i <= maxN; i += p)
+                isPrime[i] = false;
         }
     }
 }
 
-// Prime Factorization: O(nloglogn)
+// Prime Factorization: O(logN) with O(NLogLogN) pre-comtutation
 #define MAXN 1000001
 int spf[MAXN];
 void sieve()
@@ -116,16 +113,13 @@ void primeFact(ll n)
         cout << n << " ^ " << 1 << endl;
 }
 
-
 // factorial: O(n)
 ll fact[1000001];
 void factorial()
 {
     fact[0] = fact[1] = 1;
     for (ll i = 2; i <= 1000000; i++)
-    {
         fact[i] = i * fact[i - 1];
-    }
 }
 
 // ncr
@@ -138,11 +132,11 @@ ll ncr(ll n, ll r)
     {
         while (r)
         {
-            p *= n;
-            k *= r;
+            p = (p * n) % mod;
+            k = (k * r) % mod;
             ll m = __gcd(p, k);
-            p /= m;
-            k /= m;
+            p = (p * inv(m)) % mod;
+            k = (k * inv(m)) % mod;
             n--;
             r--;
         }
@@ -160,9 +154,7 @@ ll binpow(ll a, ll b, ll M)
     while (b > 0)
     {
         if (b & 1)
-        {
             res = (res * a) % M;
-        }
         a = (a * a) % M;
         b >>= 1;
     }
@@ -180,9 +172,7 @@ ll phi[1000001], maxN = 1000000;
 void initializePhi(ll maxN)
 {
     for (ll i = 1; i <= maxN; i++)
-    {
         phi[i] = i;
-    }
     for (ll i = 2; i <= maxN; i++)
     {
         if (phi[i] == i)
@@ -202,9 +192,7 @@ ll phi[1000001], maxN = 1000000;
 void initializePhi(ll maxN)
 {
     for (ll i = 1; i <= maxN; i++)
-    {
         phi[i] = i;
-    }
     for (ll i = 2; i <= maxN; i++)
     {
         if (phi[i] == i)
@@ -267,9 +255,7 @@ bool find_sol(ll a, ll b, ll c, ll &x, ll &y)
     ll xo, yo;
     ll g = gcd(abs(a), abs(b), xo, yo);
     if (c % g != 0)
-    {
         return false;
-    }
     x = xo * (c / g);
     y = yo * (c / g);
     if (a < 0)
@@ -286,13 +272,9 @@ string decToBinary(ll n)
     for (ll i = 1 << 30; i > 0; i = i / 2)
     {
         if ((n & i) != 0)
-        {
             tmp.push_back('1');
-        }
         else
-        {
             tmp.push_back('0');
-        }
     }
     return tmp;
 }
@@ -305,13 +287,9 @@ int stringToInt(string s)
     for (int i = 0; i < len; i++)
     {
         if (i == 0)
-        {
             ans = s[i] - '0';
-        }
         else
-        {
             ans = (ans * 10) + s[i] - '0';
-        }
     }
     return ans;
 }
