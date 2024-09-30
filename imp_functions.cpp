@@ -6,7 +6,7 @@
 // ->Prefix Sum / Suffix Sum / (1d 2d) ??
 // ->Sliding Window / Two pointers (in sorted only) ??
 // ->Dp / Greedy ??
-// ->Bit Manipulation (not only binary) ??
+// ->Bit Manipulation (not only binary) ?? Solve bit-by-bit (truth table)
 // ->Parity (odd/even) ??
 // ->stack, set, multiset, map, deque, priority_queue(k-min/k-max) ??
 // ->next greater element
