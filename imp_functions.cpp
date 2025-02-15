@@ -6,21 +6,22 @@
 // ->Prefix Sum / Suffix Sum / (1d 2d) ??
 // ->Sliding Window / Two pointers (in sorted only) ??
 // ->Dp / Greedy ??
-// ->Bit Manipulation (not only binary) ?? Solve bit-by-bit (truth table)
+// ->Bit Manipulation (not only binary) ??
 // ->Parity (odd/even) ??
 // ->stack, set, multiset, map, deque, priority_queue(k-min/k-max) ??
 // ->next greater element
-// ->DFS / BFS(shortest path/minimun operations) / Any graph algorithm ??
+// ->DFS / BFS(shortest path/minimum operations) / Any graph algorithm ??
 // ->In case of circular array, use visited array to stop revisiting same index
 // ->In case of circular array, append itself so that calculation can be easy
 // ->Always try to observe patterns/observation in Game Theory specially
 // ->Combination: binary search on window size
 // ->Combination: stack and string
 // ->Clusters / Grouping ??
-// ->Subarray? Counting? Try for Leetcode's Two Sum technique!
+// ->Subarray? Counting? Try Leetcode's Two Sum technique! (also applicable to prefix XOR)
 // ->Always refer bitwise formulas in bitwise equation problems
 // ->Reverse Engineering -> Construct answer from end to start
 // ->Always try to generate all answers for smaller testcases and find pattern!
+// ->What if N=1??
 // ->Never submit blindly, have a look once before submiting
 // ->GOLDEN RULE: READ PROBLEM STATEMENT TWICE CAREFULLY !!!!!!!!!!!!!!!!
 
@@ -49,19 +50,19 @@ ll binpow(ll a, ll b, ll M) // res = (a^b)%M
 }
 
 // Sieve of Eratosthenes
-int maxN = 1000000; // need prime less or equal to 'maxN'
-int isPrime[maxN + 1];
 void primeSeive()
 {
-    for (int i = 2; i <= maxN; i++)
-        isPrime[i] = true;
-    isPrime[0] = isPrime[1] = false;
-    for (long long p = 2; p * p <= maxN; p++)
+    ll n = 1000000; // need prime less or equal to 'maxN'
+    vector<bool> is_prime(n + 1, true);
+    is_prime[0] = is_prime[1] = false;
+    for (ll i = 2; i <= n; i++)
     {
-        if (isPrime[p])
+        if (is_prime[i])
         {
-            for (long long i = p * p; i <= maxN; i += p)
-                isPrime[i] = false;
+            for (ll j = i * i; j <= n; j += i)
+            {
+                is_prime[j] = false;
+            }
         }
     }
 }
@@ -119,7 +120,7 @@ void factorial()
 {
     fact[0] = fact[1] = 1;
     for (ll i = 2; i <= 1000000; i++)
-        fact[i] = i * fact[i - 1];
+        fact[i] = (i * fact[i - 1]) % mod;
 }
 
 // ncr
@@ -148,21 +149,21 @@ ll ncr(ll n, ll r)
 
 // inv
 // a^(m-2) = a^-1 (mod m);
-ll binpow(ll a, ll b, ll M)
+ll binpow(ll a, ll b)
 {
     ll res = 1;
     while (b > 0)
     {
         if (b & 1)
-            res = (res * a) % M;
-        a = (a * a) % M;
+            res = (res * a) % mod;
+        a = (a * a) % mod;
         b >>= 1;
     }
     return res;
 }
-ll inv(ll num, ll m)
+ll inv(ll num)
 {
-    ll res = binpow(num, m - 2, mod);
+    ll res = binpow(num, mod - 2);
     return res;
 }
 
